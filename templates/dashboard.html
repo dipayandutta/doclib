@@ -1,0 +1,59 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+   Document Library : Capital Numbers
+{% endblock %}
+{% block styles %}
+{{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <!--Modernizr Js -->
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,600" rel="stylesheet">
+{% endblock %}
+{% block content %}
+  <!-- header banner start -->
+  <section class="o-header">
+      <!-- content -->
+      <div class="o-header__logo">
+        <a href="#"><img src="/static/images/logo.png" alt="Capital Numbers" class="logo"></a>
+        <h1>Document Library</h1>
+      </div>
+      <!-- ~./content -->
+  </section>
+  <section class="o-mid-content">
+    <div class="login-form">
+      This is the dashboard
+      
+    </div>
+  </section>
+  <div>
+    <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('globsearch') }}">Search</a></li>
+            <li><a href="{{ url_for('upload') }}">Doc Upload</a>            
+            </li>
+            <li><a href="{{ url_for('globupload') }}">Global Upload</a>            
+            </li>
+
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+    </ul>
+  </div>
+  <div>
+    <h2>Search Your Words local search</h2>
+    <form action="/search" method="post">
+      <input type="text" name="search"></input>
+      <input type="submit" value="Search" class="login"></input>
+    </form>
+  </div>
+  <div>
+    <p>Welcome,{{ name }}</p>
+  </div>
+  <!-- ~./header banner end -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+{% endblock %}

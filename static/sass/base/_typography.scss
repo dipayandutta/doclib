@@ -1,0 +1,112 @@
+@import 'vars.scss';
+@import 'mixins.scss';
+
+// h1 {
+//     @include h1-typography;
+// }
+h1 {
+    color:#fff;
+    font-size: 34px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 700;
+
+    /* media query tablet potrait */
+    @include tablet-sm {
+        font-size: 38px;
+        line-height: 42px;
+    }
+
+    /* media query tablet potrait */
+    @include tablet-lg {
+        font-size: 68px;
+        font-weight: 700;
+        line-height: 80px;
+    }
+}
+
+h2 {
+    color: #000;
+    font-size: 22px;
+    line-height: 34px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+
+    /* media query tablet potrait */
+    @include tablet-sm {
+        font-size: 38px;
+        line-height: 42px;
+    }
+
+    /* media query tablet potrait */
+    @include tablet-lg {
+        font-size: 48px;
+        line-height: 52px;
+        font-weight: 600;
+        color: #000;
+    }
+}
+
+h3 {
+    color: #000;
+    font-size: 18px;
+    line-height: 34px;
+    text-align: center;
+    font-weight: 600;
+
+    /* media query tablet potrait */
+    @include tablet-sm {
+        font-size: 38px;
+        line-height: 42px;
+    }
+
+    /* media query tablet potrait */
+    @include tablet-lg {
+        font-size: 36px;
+        line-height: 42px;
+        font-weight: 600;
+        color: #000;
+    }
+}
+
+// h4 {
+//     @include h4-typography;
+// }
+
+// h5 {
+//     @include h5A-typography;
+
+//     &.type-2 {
+//         @include h5B-typography;
+//     }
+// }
+
+// h6 {
+//     @include h6-typography
+// }
+
+body,
+p {
+    @include bodytext-2;
+}
+
+// .c-bodytext-1{
+//     @include bodytext-1;
+// }
+
+// .c-bodytext-2{
+//     @include bodytext-2;
+// }
+
+// .c-bodytext-3{
+//     @include bodytext-3;
+// }
+
+// .c-bodytext-4{
+//     @include bodytext-4;
+// }
+
+// .c-bodytext-5{
+//     @include bodytext-5;
+// }

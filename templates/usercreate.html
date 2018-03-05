@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document Library : Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <!--Modernizr Js -->
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,600" rel="stylesheet">
+</head>
+
+<body>
+  <!-- header banner start -->
+  <section class="o-header">
+      <!-- content -->
+      <div class="o-header__logo">
+        <a href="index.html"><img src="/static/images/logo.png" alt="Capital Numbers" class="logo"></a>
+        <h1>Create A User</h1>
+      </div>
+      <!-- ~./content -->
+  </section>
+  <section class="o-mid-content">
+    <div class="login-form">
+    <h2>Enter username and password for new user </h2>
+		<form action="/createuser" method="post">
+			username: <input type="text" name="newuser"></input>
+      passowrd: <input type="password" name="newpassword"> </input>
+			<input type="submit" value="create" class="login"></input>
+		</form>
+    </div>
+  </section>
+  <!-- ~./header banner end -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+</html>

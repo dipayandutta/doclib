@@ -1,0 +1,325 @@
+@import 'vars.scss';
+@import 'mixins.scss';
+
+::selection,
+::-moz-selection{
+    background: #252525;
+    color:#fff;
+}
+*{
+    outline: none;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust:100%;
+}
+
+body{
+    background: #faf9fc;
+    height:auto;
+    min-height:100%;
+    overflow-x:hidden;
+    background: url(../images/bg-cover.jpg) 50% 0 no-repeat;
+    background-size:cover;
+    position: relative;
+}
+
+h1 {
+    margin: 0px 0px 50px 0px;
+    padding: 0px 0px 0px 0px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        margin: 0px 0px 50px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+h2 {
+    margin: 0px 0px 50px 0px;
+    padding: 0px 0px 0px 0px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        margin: 0px 0px 50px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+h3 {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+h4 {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+h5 {
+    margin: 0px 0px 20px 0px;
+    padding: 0px 0px 0px 0px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        margin: 0px 0px 20px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+h6 {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+p {
+    margin: 0px 0px 25px 0px;
+    padding: 0px 0px 0px 0px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        margin: 0px 0px 25px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    @include prefixed-transition(0.3s, ease-out);
+
+    &:hover {
+        color: initial;
+        text-decoration: none;
+    }
+    &:focus {
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+/* spinner animation */
+@-webkit-keyframes spin {
+    0% {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes spin {
+    0% {-moz-transform: rotate(0deg);}
+    100% {-moz-transform: rotate(360deg);}
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+/* pulse animation */
+@-webkit-keyframes pulse {
+    0% {-webkit-transform: scale(1);}
+    50% {-webkit-transform: scale(1.2);}
+    100% {-webkit-transform: scale(1);}
+}
+@-moz-keyframes pulse {
+    0% {-moz-transform: scale(1);}
+    50% {-moz-transform: scale(1.2);}
+    100% {-moz-transform: scale(1);}
+}
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+
+/* down arrow animation */
+@-webkit-keyframes arrowdown {
+    0% {-webkit-transform: translateY(0px);}
+    50% {-webkit-transform: translateY(10px);}
+    100% {-webkit-transform: translateY(0px);}
+}
+@-moz-keyframes arrowdown {
+    0% {-moz-transform: translateY(0px);}
+    50% {-moz-transform: translateY(10px);}
+    100% {-moz-transform: translateY(0px);}
+}
+@keyframes arrowdown {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(10px);}
+    100% {transform: translateY(0px);}
+}
+/* down arrow animation */
+
+/* down arrow animation */
+/*@-webkit-keyframes formanimation {
+    0% {-webkit-transform: rotate(0deg);}
+    25% {-webkit-transform: rotate(1deg);}
+    50% {-webkit-transform: rotate(0deg);}
+    75% {-webkit-transform: rotate(-1deg);}
+    100% {-webkit-transform: rotate(0deg);}
+}
+@-moz-keyframes formanimation {
+    0% {-moz-transform: rotate(0deg);}
+    25% {-moz-transform: rotate(1deg);}
+    50% {-moz-transform: rotate(0deg);}
+    75% {-moz-transform: rotate(-1deg);}
+    100% {-moz-transform: rotate(0deg);}
+}
+@keyframes formanimation {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(1deg);}
+    50% {transform: rotate(0deg);}
+    75% {transform: rotate(-1deg);}
+    100% {transform: rotate(0deg);}
+}*/
+@-webkit-keyframes formanimation {
+    0% {-webkit-transform: translateY(0px);}
+    25% {-webkit-transform: translateY(-15px);}
+    50% {-webkit-transform: translateY(0px);}
+    75% {-webkit-transform: translateY(10px);}
+    100% {-webkit-transform: translateY(0px);}
+}
+@-moz-keyframes formanimation {
+    0% {-moz-transform: translateY(0px);}
+    25% {-moz-transform: translateY(-15px);}
+    50% {-moz-transform: translateY(0px);}
+    75% {-moz-transform: translateY(10px);}
+    100% {-moz-transform: translateY(0px);}
+}
+@keyframes formanimation {
+    0% {transform: translateY(0px);}
+    25% {transform: translateY(-15px);}
+    50% {transform: translateY(0px);}
+    75% {transform: translateY(10px);}
+    100% {transform: translateY(0px);}
+}
+/* down arrow animation */
+
+
+.slick-dots{
+    margin-bottom: 30px;
+    text-align: center;
+
+    li{
+        display: inline-block;
+        @include prefixed-border-radius (50%);
+        text-indent: -10000px;
+        width: 5px;
+        height: 5px;
+        background-color: #9B9B9B;
+        margin: 0 10px;
+        vertical-align: middle;
+
+        &.slick-active{
+            width: 10px;
+            height: 10px;
+        }
+    }
+}
+
+.c-sticky-contact-icon{
+
+    width: 44px;
+    position: fixed;
+    top: 23%;
+    right: 0;
+    z-index: 9999;
+    background: $green;
+    padding: 7px;
+    border-radius: 5px 0 0 5px;
+    text-align: center;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+    display: none;
+    @include prefixed-transition(0.3s, ease-out);
+    cursor: pointer;
+    transform: translateX(100%);
+
+    /* for medium to tablet potrait */
+    @include tablet-lg {
+        display: block;
+    }
+
+    &:hover{
+        background: $orange;
+    }
+
+    img{
+        width: 30px;
+        display: block;
+        margin: auto;
+    }
+}
+
+.c-back-top-top-icon{
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    background: none;
+    padding: 7px;
+    text-align: center;
+    /*box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);*/
+    display: none;
+    @include prefixed-transition(0.3s, ease-out);
+    cursor: pointer;
+    transform: translateY(100%);
+
+    /* for medium to tablet potrait */
+    @include tablet-lg {
+        display: block;
+    }
+
+    &:hover{
+        background: $light-grey;
+    }
+
+    img{
+        width: 24px;
+    }
+}
+
+.show-back-to-top{
+    transform: translateY(-25px);
+}
+
+.showPanel{
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+

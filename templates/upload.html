@@ -1,0 +1,81 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+   Document Library : Capital Numbers
+{% endblock %}
+{% block styles %}
+{{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <!--Modernizr Js -->
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,600" rel="stylesheet">
+{% endblock %}
+{% block content %}
+  <!-- header banner start -->
+  <section class="o-header">
+      <!-- content -->
+      <div class="o-header__logo">
+        <a href="#"><img src="/static/images/logo.png" alt="Capital Numbers" class="logo"></a>
+        <h1>Document Library</h1>
+      </div>
+      <!-- ~./content -->
+  </section>
+  <section class="o-mid-content">
+    <div class="login-form">
+      This is the upload Page local upload
+      
+    </div>
+  </section>
+  <div>
+    <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('globsearch') }}">Search</a></li>
+            <li><a href="{{ url_for('upload') }}">Doc Upload</a>            
+            </li>
+            <li><a href="{{ url_for('globupload') }}">Global Upload</a>            
+            </li>
+
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+    </ul>
+  </div>
+  <div>
+    <p>Local Upload</p>
+    <form id="upload-form" action="{{ url_for('uploaddone') }}" method="POST" enctype="multipart/form-data">
+
+    <strong>Files:</strong><br>
+    <input id="file-picker" type="file" name="file" accept="image/*" multiple>
+    <div id="msg"></div>
+    <input type="submit" value="Upload!" id="upload-button">
+</form>
+  </div>
+  <div>
+    <p>Welcome,{{ name }}</p>
+  </div>
+  <!-- ~./header banner end -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    $("#file-picker").change(function(){
+        var input = document.getElementById('file-picker');
+        for (var i=0; i<input.files.length; i++)
+        {
+        //koala.jpg, koala.JPG substring(index) lastIndexOf('a') koala.1.jpg
+            var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+            if ((ext == 'doc') || (ext == 'docx') || (ext == 'txt') || (ext=xls) || (ext == 'pdf'))
+            {
+                $("#msg").text("Files are supported")
+            }
+            else
+            {
+                $("#msg").text("Files are NOT supported")
+                document.getElementById("file-picker").value ="";
+            }
+        }
+    } );
+</script>
+{% endblock %}

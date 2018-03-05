@@ -1,0 +1,437 @@
+@import 'vars.scss';
+
+
+
+/*
+    ==========================
+    TRANSITION & HELPER MIXINS
+    ==========================
+*/
+@mixin prefixed-transition ($time, $ease) {
+    -webkit-transition: all $time $ease;
+    -moz-transition: all $time $ease;
+    -ms-transition: all $time $ease;
+    -o-transition: all $time $ease;
+    transition: all $time $ease;
+}
+
+@mixin prefixed-transition-delay ($time) {
+    -webkit-transition-delay: $time;
+    -moz-transition-delay: $time;
+    -ms-transition-delay: $time;
+    -o-transition-delay: $time;
+    transition-delay: $time;
+}
+
+@mixin prefixed-box-shadow ($x, $y, $blur, $color) {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    -ms-box-shadow: $x $y $blur $color;
+    -o-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin prefixed-transform ($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+
+@mixin prefixed-border-radius ($border-radius) {
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+}
+
+@mixin prefixed-animation ($name, $time, $ease, $delay, $itaration) {
+    -webkit-animation: $name $time $ease $delay $itaration;
+    -moz-animation: $name $time $ease $delay $itaration;
+    -ms-animation: $name $time $ease $delay $itaration;
+    -o-animation: $name $time $ease $delay $itaration;
+    animation: $name $time $ease $delay $itaration;
+}
+
+@mixin prefixed-animation-scale($scale){
+    -moz-transform: scale($scale);
+    -webkit-transform: scale($scale);
+     transform: scale($scale);
+}
+
+// variables
+    $slowly: all .2s ease;
+
+    // mixins
+    @mixin transition($value...) {
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -ms-transition: $value;
+    transition: $value;
+    }
+
+    @mixin transform($value...) {
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    transform: $value;
+    }
+
+/*
+    ==================
+    MEDIA QUERY MIXINS
+    ==================
+*/
+
+/* mobile first for mobiles >= 480px */
+@mixin mobile-xs {
+    @media all and (min-width: #{$mobile-xs}) {
+        @content;
+    }
+}
+
+
+/* mobile first for mobiles >= 560px */
+@mixin mobile-lg {
+    @media all and (min-width: #{$mobile-sm}) {
+        @content;
+    }
+}
+
+
+/* mobile first for phablets >= 640px */
+@mixin phablet {
+    @media all and (min-width: #{$mobile-lg}) {
+        @content;
+    }
+}
+
+
+/* mobile first for tablet portrait >= 768px */
+@mixin tablet-sm {
+    @media all and (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+
+/* mobile first for tablet landscape & small desktop >= 1024px */
+@mixin tablet-lg {
+    @media all and (min-width: #{$tablet-lg}) {
+        @content;
+    }
+}
+
+
+/* mobile first for small desktop > 1024px */
+@mixin desktop-xs {
+    @media all and (min-width: #{$tablet-lg+1}) {
+        @content;
+    }
+}
+
+/* mobile first for small desktop >= 1280px */
+@mixin desktop-sm {
+    @media all and (min-width: #{$desktop-sm}) {
+        @content;
+    }
+}
+
+
+/* mobile first for medium desktop >= 1360px */
+@mixin desktop-md {
+    @media all and (min-width: #{$desktop-md}) {
+        @content;
+    }
+}
+
+
+/* mobile first for large desktop >= 1600px */
+@mixin desktop-lg {
+    @media all and (min-width: #{$desktop-lg}) {
+        @content;
+    }
+}
+
+
+
+/*
+    =================
+    TYPOGRAPHY MIXINS
+    =================
+*/
+@mixin montserrat-light {
+    font-family: $montserrat;
+    font-weight: $montserrat-light;
+}
+
+@mixin montserrat-semi-bold {
+    font-family: $montserrat;
+    font-weight: $montserrat-semi-bold;
+}
+
+@mixin montserrat-bold {
+    font-family: $montserrat;
+    font-weight: $montserrat-bold;
+}
+
+
+
+/*
+    ========================
+    HEADER TYPOGRAPHY MIXINS
+    ========================
+*/
+@mixin h1-typography {
+    @include montserrat-semi-bold;
+
+    color: $black;
+    font-size: 18px;
+    line-height: 30px;
+
+    /* media query tablet potrait */
+    @include tablet-sm {
+        font-size: 28px;
+        line-height: 55px;
+    }
+
+    /* media query for tablet landscape */
+    @include tablet-lg {
+        font-size: 36px;
+        line-height: 72px;
+    }
+}
+
+@mixin h2A-typography  {
+    @include montserrat-semi-bold;
+
+    color: $black;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+
+    /* media query tablet potrait */
+    @include tablet-sm {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    /* tablet landscape & small desktop */
+    @include tablet-lg {
+        font-size: 48px;
+        line-height: 52px;
+        font-weight: 300;
+    }
+}
+
+@mixin h2B-typography {
+
+    color: #000;
+    font-size: 28px;
+    line-height: 34px;
+
+    /* media query tablet potrait */
+    @include tablet-sm {
+        font-size: 38px;
+        line-height: 42px;
+    }
+
+    /* media query tablet potrait */
+    @include tablet-lg {
+        font-size: 48px;
+        line-height: 52px;
+        font-weight: 600;
+        color: #000;
+    }
+}
+
+@mixin h3-typography {
+    @include montserrat-semi-bold;
+
+    color: #000;
+    font-size: 22px;
+    line-height: 28px;
+
+    /* mobile first for tablet landscape & small desktop */
+    @include tablet-lg {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+@mixin h4-typography {
+    @include montserrat-semi-bold;
+
+    color: $black;
+    font-size: 16px;
+    line-height: 24px;
+
+    /* mobile first for tablet landscape & small desktop */
+    @include tablet-lg {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    /* for medium to large screen */
+    @include desktop-md {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+@mixin h5A-typography {
+    @include montserrat-semi-bold;
+
+    color: $black;
+    font-size: 22px;
+    line-height: 28px;
+
+    /* mobile first for tablet landscape & small desktop */
+    @include tablet-lg {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    /* for medium to large screen */
+    @include desktop-md {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+@mixin h5B-typography {
+    @include montserrat-semi-bold;
+
+    color: $black;
+    font-size: 16px;
+    line-height: 24px;
+
+    /* mobile first for tablet landscape & small desktop */
+    @include tablet-lg {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    /* for medium to large screen */
+    @include desktop-md {
+        font-size: 28px;
+        line-height: 40px;
+    }
+}
+
+@mixin h5C-typography {
+    @include montserrat-light;
+
+    color: $black;
+    font-size: 16px;
+    line-height: 24px;
+
+    /* mobile first for tablet landscape & small desktop */
+    @include tablet-lg {
+        font-size: 24px;
+        line-height: 40px;
+    }
+
+    /* for medium to large screen */
+    @include desktop-md {
+        font-size: 24px;
+        line-height: 40px;
+    }
+}
+
+@mixin h6-typography {
+    @include montserrat-semi-bold;
+
+    color: $black;
+    font-size: 22px;
+    line-height: 28px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        font-size: 22px;
+        line-height: 34px;
+    }
+}
+
+
+
+/*
+    ======================
+    BODY TYPOGRAPHY MIXINS
+    ======================
+*/
+@mixin bodytext-light {
+    @include montserrat-light;
+    color: $body-textcolor;
+}
+
+@mixin bodytext-semi-bold {
+    @include montserrat-semi-bold;
+    color: $body-textcolor;
+}
+
+@mixin bodytext-1 {
+    @include bodytext-light;
+
+    font-size: 18px;
+    line-height: 30px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+
+@mixin bodytext-2 {
+    @include bodytext-light;
+
+    font-size: 16px;
+    line-height: 28px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+@mixin bodytext-3 {
+    @include bodytext-semi-bold;
+
+    font-size: 16px;
+    line-height: 28px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+@mixin bodytext-4 {
+    @include bodytext-semi-bold;
+
+    font-size: 15px;
+    line-height: 22px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        font-size: 15px;
+        line-height: 22px;
+    }
+}
+
+@mixin bodytext-5 {
+    @include bodytext-light;
+
+    font-size: 12px;
+    line-height: 15px;
+
+    /* for medium to large screen */
+    @include desktop-md {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

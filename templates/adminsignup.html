@@ -1,0 +1,42 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+   Admin Login
+{% endblock %}
+{% block styles %}
+{{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <!--Modernizr Js -->
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,600" rel="stylesheet">
+{% endblock %}
+{% block content %}
+  <!-- header banner start -->
+  <section class="o-header">
+      <!-- content -->
+      <div class="o-header__logo">
+        <a href="#"><img src="/static/images/logo.png" alt="Capital Numbers" class="logo"></a>
+        <h1>Admin Signup</h1>
+      </div>
+      <!-- ~./content -->
+  </section>
+  <section class="o-mid-content">
+    <div class="login-form">
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.username) }}
+        {{ wtf.form_field(form.password) }}
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign UP</button>
+      </form>
+    </div>
+  </section>
+  <!-- ~./header banner end -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+{% endblock %}

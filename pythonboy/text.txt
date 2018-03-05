@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <section class="o-mid-content">
+            <ul>
+            {% for result in results %}
+              <li>
+                <p class="heading">
+                  <a href="{{ result[0] }}">{{ result[0] }}</a>
+                </p>
+                <p>{% for item in result[1:] %}
+                      {{ item }}
+                    {% endfor %}
+                </p>
+              </li>
+              {% endfor %}
+            <ul>
+        </section>
+      </div>
+    </div>
+  </div>
